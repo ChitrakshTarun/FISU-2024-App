@@ -9,15 +9,39 @@ export default function RootLayout() {
       <GestureHandlerRootView>
         <Stack>
           <Stack.Screen
-            name="index"
+            name="(tabs)"
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name="(tabs)"
+            name="food"
             options={{
               headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="tourism"
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen
+            name="health"
+            options={{
+              headerTitle: "Healthcare Information",
+            }}
+          />
+          <Stack.Screen
+            name="help"
+            options={{
+              headerTitle: "Contacts & Help",
+            }}
+          />
+          <Stack.Screen
+            name="hosts"
+            options={{
+              headerTitle: "Event Hosts",
             }}
           />
         </Stack>
