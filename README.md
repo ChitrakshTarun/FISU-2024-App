@@ -2,6 +2,13 @@
 
 Participant app for the 2024 FISU Shooting Event, held in New Delhi. Built using React Native, Expo & Firebase.
 
+The app has been designed & developed by the following team:
+
+- [Chitraksh Tarun](https://github.com/ChitrakshTarun/) - Frontend Development + Integrating Backend
+- [Dipesh Mittal](https://github.com/zeeno2616/) - Frontend Development
+- [Sabyasachi Chakraborty](https://github.com/mixter3011/) - Backend Operations + Authentication Logic
+- [Yash Srivastava](https://github.com/yashsrivasta7a) - Initial App Designs
+
 # About this Project
 
 The FISU Shooting App is a React Native, Expo Project, built using Expo SDK 51 and TypeScript. The following is the complete list of frameworks, tool, languages and dependencies used to build the app.
@@ -27,12 +34,3 @@ We have used the following packages to build certain components or pages of our 
 - `@tanstack/react-query` Managing fetched data from API Endpoints
 - `react-native-gesture-handler` Gesture Handling
 - `react-native-reanimated-carousel` Animated Carousel Component
-
-# Collaborators
-
-The app has been designed & developed by the following team:
-
-- [Chitraksh Tarun](https://github.com/ChitrakshTarun/) - Frontend Development + Integrating Backend
-- [Dipesh Mittal](https://github.com/zeeno2616/) - Frontend Development
-- [Sabyasachi Chakraborty](https://github.com/mixter3011/) - Backend Operations + Authentication Logic
-- [Yash Srivastava](https://github.com/yashsrivasta7a) - Initial App Designs
