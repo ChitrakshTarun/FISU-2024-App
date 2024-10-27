@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import { Colors } from "@/constants/Colors";
 
 interface ProfileItemProps {
   icon: keyof typeof Ionicons.glyphMap;
@@ -9,10 +10,14 @@ interface ProfileItemProps {
   isLast: boolean;
 }
 
+interface ProfileCardProps {
+  items: ProfileItemProps[];
+}
+
 const ProfileItem = ({ icon, label, value, isLast }: ProfileItemProps) => (
   <View style={[styles.profileItem, isLast && styles.lastProfileItem]}>
     <View style={styles.iconContainer}>
-      <Ionicons name={icon} size={24} color="#4A90E2" />
+      <Ionicons name={icon} size={24} color={Colors.OceanBlue} />
     </View>
     <View style={styles.itemContent}>
       <Text style={styles.label}>{label}</Text>
@@ -21,7 +26,7 @@ const ProfileItem = ({ icon, label, value, isLast }: ProfileItemProps) => (
   </View>
 );
 
-const ProfileCard = ({ items }) => (
+const ProfileCard = ({ items }: ProfileCardProps) => (
   <View style={styles.card}>
     {items.map((item, index) => (
       <ProfileItem
@@ -38,7 +43,6 @@ const ProfileCard = ({ items }) => (
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F7FA",
   },
   scrollContent: {
     flexGrow: 1,
@@ -58,7 +62,8 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    backgroundColor: Colors.White,
+    opacity: 0.9,
     justifyContent: "center",
     alignItems: "center",
     shadowColor: "#000",
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
   avatarText: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "#4A90E2",
+    color: Colors.OceanBlue,
   },
   name: {
     fontSize: 24,

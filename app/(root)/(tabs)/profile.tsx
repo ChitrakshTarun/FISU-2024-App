@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
@@ -31,21 +31,15 @@ export default function ProfileScreen() {
       <Tabs.Screen
         options={{
           headerRight: () => (
-            <TouchableOpacity onPress={signOut} style={styles.logoutButton}>
+            <Pressable onPress={signOut} style={{ marginRight: 16 }}>
               <Ionicons name="log-out-outline" size={28} color={Colors.White} />
-            </TouchableOpacity>
+            </Pressable>
           ),
-          headerStyle: {
-            backgroundColor: Colors.DarkNavy,
-          },
-          headerTitleStyle: {
-            color: Colors.White,
-          },
           headerShadowVisible: false,
         }}
       />
       <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
-        <LinearGradient colors={[Colors.DarkNavy, Colors.OceanBlue]} style={styles.headerContainer}>
+        <View style={styles.headerContainer}>
           <View style={styles.profileHeader}>
             <View style={styles.avatarContainer}>
               <Text style={styles.avatarText}>{name[0]}</Text>
@@ -55,7 +49,7 @@ export default function ProfileScreen() {
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.discipline}>{shooting_discipline}</Text>
           </View>
-        </LinearGradient>
+        </View>
         <ProfileCard items={profileItems} />
       </ScrollView>
     </>
@@ -72,9 +66,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flexDirection: "row",
-    paddingVertical: 40,
-    // borderBottomLeftRadius: 16,
-    // borderBottomRightRadius: 16,
+    paddingVertical: 50,
     alignItems: "center",
     justifyContent: "space-around",
   },
@@ -88,7 +80,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.9)",
     justifyContent: "center",
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: Colors.Black,
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
     shadowRadius: 6,
@@ -97,18 +89,16 @@ const styles = StyleSheet.create({
   avatarText: {
     fontSize: 40,
     fontWeight: "bold",
-    color: "#4A90E2",
+    color: Colors.OceanBlue,
   },
   name: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 5,
-    color: "white",
   },
   discipline: {
     fontSize: 18,
     textAlign: "right",
-    color: "white",
   },
   card: {
     backgroundColor: "white",
@@ -152,18 +142,5 @@ const styles = StyleSheet.create({
   },
   logoutButton: {
     marginRight: 16,
-  },
-  signOutButton: {
-    backgroundColor: "#FF3B30",
-    marginHorizontal: 20,
-    marginBottom: 30,
-    padding: 15,
-    borderRadius: 12,
-    alignItems: "center",
-  },
-  signOutText: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "600",
   },
 });
