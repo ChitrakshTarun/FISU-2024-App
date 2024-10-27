@@ -1,10 +1,13 @@
+import { useRouter } from "expo-router";
 import { StyleSheet, View, FlatList, Text, RefreshControl } from "react-native";
 import UpdatesCard from "@/components/UpdatesCard";
-import useUpdatesQuery from "@/hooks/useUpdatesQuery";
+import useFirestoreQuery from "@/hooks/useFirestoreQuery";
 import Loader from "@/components/Loader";
+import { Updates } from "@/utils/types/updates";
 
 const UpdatesScreen = () => {
-  const { data: updates, isLoading, isError, refetch, isRefetching } = useUpdatesQuery();
+  // Replace useUpdatesQuery with useFirestoreQuery for the "updates" collection
+  const { data: updates, isLoading, isError, refetch, isRefetching } = useFirestoreQuery<Updates>("updates");
 
   if (isLoading) {
     return <Loader text="notifications" />;
@@ -22,7 +25,7 @@ const UpdatesScreen = () => {
     <View style={styles.safeAreaContainer}>
       <FlatList
         showsVerticalScrollIndicator={false}
-        data={updates}
+        data={Object.values(updates || {})} // Use Object.values to transform the updates object into an array
         renderItem={({ item }) => (
           <UpdatesCard
             id={item.id}

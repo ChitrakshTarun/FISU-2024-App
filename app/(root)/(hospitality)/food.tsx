@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FlatList, RefreshControl, StyleSheet, Text } from "react-native";
-import { useRouter } from "expo-router";
 import ItemCard from "@/components/ItemCard";
-import useAppDataQuery from "@/hooks/useAppDataQuery";
+import useFirestoreQuery from "@/hooks/useFirestoreQuery";
 import defaultStyles from "@/constants/Styles";
 import Loader from "@/components/Loader";
 
@@ -12,12 +11,7 @@ const FoodPage = () => {
     description: string;
   }
 
-  const router = useRouter();
-  const { data, isLoading, error, refetch, isRefetching } = useAppDataQuery<{ [key: string]: MenuItem }>("food");
-
-  useEffect(() => {
-    console.log(JSON.stringify(data));
-  }, [data]);
+  const { data, isLoading, error, refetch, isRefetching } = useFirestoreQuery<{ [key: string]: MenuItem }>("food");
 
   if (isLoading) return <Loader text="food information" />;
   if (error) return <Text style={styles.message}>Error: {error.message}</Text>;

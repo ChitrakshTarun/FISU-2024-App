@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View, RefreshControl } from "react-native";
 import Loader from "@/components/Loader";
-import useScheduleQuery from "@/hooks/useScheduleQuery";
+import useFirestoreQuery from "@/hooks/useFirestoreQuery";
 import EventScheduleCard from "@/components/EventScheduleCard";
+import { Schedule } from "@/utils/types/schedule";
 
 const SchedulePage = () => {
-  const { data, isLoading, error, refetch, isRefetching } = useScheduleQuery();
+  const { data, isLoading, error, refetch, isRefetching } = useFirestoreQuery<Schedule>("schedule");
   const [expandedDay, setExpandedDay] = useState<string | null>(null);
 
   if (isLoading) return <Loader text="schedule" />;

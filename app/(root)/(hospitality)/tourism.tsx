@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, StyleSheet, RefreshControl, FlatList } from "react-native";
-import useAppDataQuery from "@/hooks/useAppDataQuery";
+import useFirestoreQuery from "@/hooks/useFirestoreQuery";
 import defaultStyles from "@/constants/Styles";
 import Loader from "@/components/Loader";
 import ItemCard from "@/components/ItemCard";
@@ -15,7 +15,7 @@ const TourismPage = () => {
     link?: string;
   }
 
-  const { data, isLoading, error, refetch, isRefetching } = useAppDataQuery<TourismItem>("tourism");
+  const { data, isLoading, error, refetch, isRefetching } = useFirestoreQuery<TourismItem>("tourism");
 
   if (isLoading) return <Loader text="tourism information" />;
   if (error) return <Text style={styles.message}>Error: {error.message}</Text>;
