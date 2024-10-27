@@ -1,93 +1,169 @@
-import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import React from "react";
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
+import Loader from "@/components/Loader";
 import { useAuth } from "@/providers/CustomAuthProvider";
+import usePlayerDataQuery from "@/hooks/usePlayerDataQuery";
 import { Colors } from "@/constants/Colors";
+import ProfileCard from "@/components/ProfileCard";
 
 export default function ProfileScreen() {
   const { signOut, passportNumber } = useAuth();
-  const [isSigningOut, setIsSigningOut] = useState(false);
+  const { data, isLoading } = usePlayerDataQuery(passportNumber!);
+
+  if (isLoading) {
+    return <Loader text="your profile" />;
+  }
+
+  const { country, dob, gender, name, shooting_discipline } = data!;
+  const profileItems = [
+    { icon: "person-outline", label: "Name", value: name },
+    { icon: "id-card-outline", label: "Passport Number", value: passportNumber },
+    { icon: "flag-outline", label: "Country", value: country },
+    { icon: "calendar-outline", label: "Date of Birth", value: dob },
+    { icon: "person-outline", label: "Gender", value: gender },
+  ];
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <View style={styles.content}>
-          <Text style={styles.passportNumber}>Passport Number: {passportNumber}</Text>
-
-          <TouchableOpacity
-            style={[styles.signOutButton, isSigningOut && styles.buttonDisabled]}
-            onPress={signOut}
-            disabled={isSigningOut}
-          >
-            {isSigningOut ? <ActivityIndicator color="#fff" /> : <Text style={styles.signOutButtonText}>Sign Out</Text>}
-          </TouchableOpacity>
-        </View>
-      </View>
-    </SafeAreaView>
+    <>
+      <Tabs.Screen
+        options={{
+          headerRight: () => (
+            <TouchableOpacity onPress={signOut} style={styles.logoutButton}>
+              <Ionicons name="log-out-outline" size={28} color={Colors.White} />
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: Colors.DarkNavy,
+          },
+          headerTitleStyle: {
+            color: Colors.White,
+          },
+          headerShadowVisible: false,
+        }}
+      />
+      <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
+        <LinearGradient colors={[Colors.DarkNavy, Colors.OceanBlue]} style={styles.headerContainer}>
+          <View style={styles.profileHeader}>
+            <View style={styles.avatarContainer}>
+              <Text style={styles.avatarText}>{name[0]}</Text>
+            </View>
+          </View>
+          <View>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.discipline}>{shooting_discipline}</Text>
+          </View>
+        </LinearGradient>
+        <ProfileCard items={profileItems} />
+      </ScrollView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: "#fff",
-  },
   container: {
     flex: 1,
+    backgroundColor: "#F5F7FA",
   },
-  scrollViewContent: {
+  scrollContent: {
     flexGrow: 1,
   },
-  formContainer: {
-    padding: 20,
-    width: "100%",
+  headerContainer: {
+    flexDirection: "row",
+    paddingVertical: 40,
+    // borderBottomLeftRadius: 16,
+    // borderBottomRightRadius: 16,
+    alignItems: "center",
+    justifyContent: "space-around",
+  },
+  profileHeader: {
     alignItems: "center",
   },
-  content: {
-    padding: 20,
-  },
-  instructionText: {
-    marginBottom: 20,
-    color: "#333",
-    textAlign: "auto",
-    lineHeight: 24,
-  },
-  passportNumber: {
-    fontSize: 18,
-    fontWeight: "600",
-    marginBottom: 20,
-  },
-  button: {
-    backgroundColor: Colors.OceanBlue,
-    padding: 15,
-    borderRadius: 5,
-    width: "100%",
+  avatarContainer: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    justifyContent: "center",
     alignItems: "center",
-    marginTop: 20,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 3,
   },
-  buttonDisabled: {
-    backgroundColor: Colors.OceanBlue + "80",
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
+  avatarText: {
+    fontSize: 40,
     fontWeight: "bold",
+    color: "#4A90E2",
   },
-  link: {
-    marginTop: 20,
-    textAlign: "center",
-    color: "#007AFF",
+  name: {
+    fontSize: 24,
+    fontWeight: "bold",
+    marginBottom: 5,
+    color: "white",
+  },
+  discipline: {
+    fontSize: 18,
+    textAlign: "right",
+    color: "white",
+  },
+  card: {
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 20,
+    margin: 20,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 8,
+    elevation: 3,
+  },
+  profileItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: "#F0F0F0",
+  },
+  iconContainer: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#F5F7FA",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 15,
+  },
+  itemContent: {
+    flex: 1,
+  },
+  label: {
+    fontSize: 14,
+    color: "#8F9BB3",
+    marginBottom: 4,
+  },
+  value: {
+    fontSize: 16,
+    color: "#2E3A59",
+    fontWeight: "600",
+  },
+  logoutButton: {
+    marginRight: 16,
   },
   signOutButton: {
     backgroundColor: "#FF3B30",
+    marginHorizontal: 20,
+    marginBottom: 30,
     padding: 15,
-    borderRadius: 5,
-    width: "100%",
+    borderRadius: 12,
     alignItems: "center",
   },
-  signOutButtonText: {
+  signOutText: {
     color: "white",
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: "600",
   },
 });
