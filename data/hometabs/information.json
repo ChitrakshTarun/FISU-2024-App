@@ -1,0 +1,6 @@
+[
+  { "title": "Events", "icon": "information-circle-outline", "path": "/(root)/(information)/events" },
+  { "title": "Venues", "icon": "map-outline", "path": "/(root)/(information)/venues" },
+  { "title": "Hosts", "icon": "people-outline", "path": "/(root)/(information)/hosts" },
+  { "title": "Help", "icon": "help-circle-outline", "path": "/(root)/(information)/help" }
+]

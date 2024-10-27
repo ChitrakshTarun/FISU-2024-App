@@ -13,6 +13,7 @@ export default function RootLayout() {
         name="(hospitality)"
         options={{
           headerShown: false,
+          headerBackButtonMenuEnabled: true,
         }}
       />
       <Stack.Screen

@@ -21,12 +21,12 @@ const carousel: CarouselItem[] = [
   {
     title: "Discover Tourism Spots",
     carouselImage: tourismCarousel,
-    path: "/hospitality/tourism",
+    path: "/(root)/(hospitality)/tourism",
   },
   {
     title: "Check out the events",
     carouselImage: eventsCarousel,
-    path: "/information/events",
+    path: "/(root)/(information)/events",
   },
 ];
 
@@ -89,11 +89,5 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 24,
     fontWeight: "bold",
-  },
-  loadingIndicator: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: [{ translateX: -25 }, { translateY: -25 }], // Center the loading indicator
   },
 });
