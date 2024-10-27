@@ -41,17 +41,6 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="shuttle"
-        options={{
-          headerTitle: "Shuttle Schedule",
-          tabBarLabel: "Shuttle",
-          tabBarIcon: ({ focused, size }) => (
-            <Ionicons name={focused ? "bus" : "bus-outline"} size={size} color={focused ? Colors.Black : Colors.Gray} />
-          ),
-          tabBarLabelStyle: { fontWeight: "bold" },
-        }}
-      />
-      <Tabs.Screen
         name="notifications"
         options={{
           headerTitle: "Event Updates",
