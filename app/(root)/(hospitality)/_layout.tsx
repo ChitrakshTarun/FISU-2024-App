@@ -20,9 +20,9 @@ const InformationLayout = () => {
         }}
       />
       <Stack.Screen
-        name="travel"
+        name="shuttles"
         options={{
-          headerTitle: "Travel Information",
+          headerTitle: "Shuttles Information",
           headerBackTitle: "Back",
         }}
       />

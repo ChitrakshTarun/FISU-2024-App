@@ -5,8 +5,8 @@ import HomeButtonCard from "@/components/HomeButtonCard";
 import CustomCarousel from "@/components/CustomCarousel";
 import { Ionicons } from "@expo/vector-icons";
 // DATA, CONSTANTS AND FUNCTIONS
-import information from "@/data/hometabs/information.json";
-import hospitality from "@/data/hometabs/hospitality.json";
+import information from "@/data/home/information.json";
+import hospitality from "@/data/home/hospitality.json";
 import defaultStyles, { SCREEN_HEIGHT } from "@/constants/Styles";
 import { Colors } from "@/constants/Colors";
 import { Href } from "expo-router";

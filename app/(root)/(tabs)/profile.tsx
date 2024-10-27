@@ -23,6 +23,7 @@ export default function ProfileScreen() {
     { icon: "flag-outline", label: "Country", value: country },
     { icon: "calendar-outline", label: "Date of Birth", value: dob },
     { icon: "person-outline", label: "Gender", value: gender },
+    { icon: "card-outline", label: "Discipline", value: shooting_discipline },
   ];
 
   return (
@@ -30,8 +31,8 @@ export default function ProfileScreen() {
       <Tabs.Screen
         options={{
           headerRight: () => (
-            <Pressable onPress={signOut} style={{ marginRight: 16 }}>
-              <Ionicons name="log-out-outline" size={28} color={Colors.White} />
+            <Pressable onPress={signOut} style={{ marginRight: 20 }}>
+              <Ionicons name="log-out-outline" size={28} color={Colors.Black} />
             </Pressable>
           ),
           headerShadowVisible: false,
@@ -44,10 +45,6 @@ export default function ProfileScreen() {
               <Text style={styles.avatarText}>{name[0]}</Text>
             </View>
           </View>
-          <View>
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.discipline}>{shooting_discipline}</Text>
-          </View>
         </View>
         <ProfileCard items={profileItems} />
       </ScrollView>
@@ -58,14 +55,13 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F7FA",
   },
   scrollContent: {
     flexGrow: 1,
   },
   headerContainer: {
     flexDirection: "row",
-    paddingVertical: 50,
+    paddingVertical: 28,
     alignItems: "center",
     justifyContent: "space-around",
   },
@@ -76,7 +72,8 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
     borderRadius: 50,
-    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    backgroundColor: Colors.White,
+    opacity: 0.9,
     justifyContent: "center",
     alignItems: "center",
     shadowColor: Colors.Black,
@@ -91,7 +88,7 @@ const styles = StyleSheet.create({
     color: Colors.OceanBlue,
   },
   name: {
-    fontSize: 24,
+    // fontSize: 24,
     fontWeight: "bold",
     marginBottom: 5,
   },

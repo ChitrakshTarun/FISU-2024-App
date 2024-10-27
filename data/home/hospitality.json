@@ -1,6 +1,6 @@
 [
   { "title": "Food", "icon": "fast-food-outline", "path": "/(root)/(hospitality)/food" },
   { "title": "Tourism", "icon": "id-card-outline", "path": "/(root)/(hospitality)/tourism" },
-  { "title": "Travel", "icon": "car-outline", "path": "/(root)/(hospitality)/travel" },
+  { "title": "Shuttles", "icon": "bus-outline", "path": "/(root)/(hospitality)/shuttles" },
   { "title": "Health", "icon": "medkit-outline", "path": "/(root)/(hospitality)/health" }
 ]

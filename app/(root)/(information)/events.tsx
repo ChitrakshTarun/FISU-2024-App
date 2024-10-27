@@ -9,10 +9,9 @@ const ShootingEventsPage = () => {
   const { data: shootingEvents, isLoading, error } = useFirestoreQuery("events");
 
   if (isLoading) return <Loader text="Loading shooting events..." />;
-  if (error) return <Text style={styles.message}>Error loading events: {error.message}</Text>;
-  if (!shootingEvents) return <Text style={styles.message}>No event information available.</Text>;
+  if (error) return <Text>Error loading events: {error.message}</Text>;
+  if (!shootingEvents) return <Text>No event information available.</Text>;
 
-  // Sorting function with case normalization
   const sortCategories = (categories: string[]) => {
     const order = ["men", "women", "mixed"];
     return categories.sort((a, b) => order.indexOf(a.toLowerCase()) - order.indexOf(b.toLowerCase()));
