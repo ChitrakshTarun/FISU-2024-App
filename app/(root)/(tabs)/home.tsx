@@ -24,7 +24,7 @@ const HomePage = () => {
             key={index}
             title={item.title}
             icon={item.icon as keyof typeof Ionicons.glyphMap}
-            backgroundColor={[Colors.Teal, Colors.OceanBlue]}
+            backgroundColor={[Colors.Sage, Colors.SeaGreen]}
             path={item.path as Href<string>}
           />
         ))}
@@ -38,7 +38,7 @@ const HomePage = () => {
             key={index}
             title={item.title}
             icon={item.icon as keyof typeof Ionicons.glyphMap}
-            backgroundColor={[Colors.Teal, Colors.OceanBlue]}
+            backgroundColor={[Colors.Sage, Colors.SeaGreen]}
             path={item.path as Href<string>}
           />
         ))}

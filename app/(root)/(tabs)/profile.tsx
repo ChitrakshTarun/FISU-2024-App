@@ -2,7 +2,6 @@ import React from "react";
 import { View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { LinearGradient } from "expo-linear-gradient";
 import Loader from "@/components/Loader";
 import { useAuth } from "@/providers/CustomAuthProvider";
 import usePlayerDataQuery from "@/hooks/usePlayerDataQuery";
