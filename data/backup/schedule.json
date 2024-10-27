@@ -1,0 +1,94 @@
+{
+  "06-11-24": { "1": { "allDay": true, "title": "Delegation Arrival" } },
+  "07-11-24": {
+    "1": { "title": "Delegation Arrival", "allDay": true },
+    "2": {
+      "startTime": { "seconds": 1730950200, "nanoseconds": 831000000 },
+      "allDay": false,
+      "endTime": { "seconds": 1730989800, "nanoseconds": 644000000 },
+      "title": "Accredation"
+    },
+    "3": {
+      "endTime": { "seconds": 1730979000, "nanoseconds": 357000000 },
+      "allDay": false,
+      "title": "Unofficial Training",
+      "startTime": { "seconds": 1730950200, "nanoseconds": 75000000 }
+    }
+  },
+  "08-11-24": {
+    "1": {
+      "startTime": { "seconds": 1731036600, "nanoseconds": 528000000 },
+      "endTime": { "seconds": 1731051000, "nanoseconds": 863000000 },
+      "allDay": false,
+      "title": "Official Training"
+    },
+    "2": {
+      "endTime": { "seconds": 1731054600, "nanoseconds": 312000000 },
+      "allDay": false,
+      "startTime": { "seconds": 1731079800, "nanoseconds": 879000000 },
+      "title": "Accredation"
+    },
+    "3": {
+      "startTime": { "seconds": 1731058200, "nanoseconds": 999000000 },
+      "allDay": false,
+      "title": "Technical Meeting"
+    },
+    "4": {
+      "startTime": { "seconds": 1731067200, "nanoseconds": 227000000 },
+      "allDay": "false",
+      "title": "Opening Ceremony"
+    }
+  },
+  "09-11-24": {
+    "1": {
+      "startTime": { "seconds": 1731119400, "nanoseconds": 116000000 },
+      "endTime": { "seconds": 1731151800, "nanoseconds": 187000000 },
+      "title": "Competition followed by Awarding Ceremony, after Finals of every Discipline",
+      "allDay": false
+    }
+  },
+  "10-11-24": {
+    "1": {
+      "title": "Competition followed by Awarding Ceremony, after Finals of every Discipline",
+      "endTime": { "seconds": 1731238200, "nanoseconds": 352000000 },
+      "allDay": false,
+      "startTime": { "seconds": 1731205800, "nanoseconds": 197000000 }
+    }
+  },
+  "11-11-24": {
+    "1": {
+      "endTime": { "seconds": 1731324600, "nanoseconds": 824000000 },
+      "title": "Competition followed by Awarding Ceremony, after Finals of every Discipline",
+      "allDay": false,
+      "startTime": { "seconds": 1731292200, "nanoseconds": 688000000 }
+    }
+  },
+  "12-11-24": {
+    "1": {
+      "title": "Competition followed by Awarding Ceremony, after Finals of every Discipline",
+      "endTime": { "seconds": 1731411000, "nanoseconds": 953000000 },
+      "allDay": false,
+      "startTime": { "seconds": 1731378600, "nanoseconds": 597000000 }
+    }
+  },
+  "13-11-24": {
+    "1": {
+      "title": "Competition followed by Awarding Ceremony, after Finals of every Discipline",
+      "startTime": { "seconds": 1731465000, "nanoseconds": 535000000 },
+      "endTime": { "seconds": 1731497400, "nanoseconds": 821000000 },
+      "allDay": false
+    },
+    "2": {
+      "endTime": { "seconds": 1731493800, "nanoseconds": 548000000 },
+      "title": "Competition followed by Prize Distribution",
+      "allDay": false,
+      "startTime": { "seconds": 1731465000, "nanoseconds": 315000000 }
+    },
+    "3": {
+      "title": "Closing Ceremony",
+      "startTime": { "seconds": 1731497400, "nanoseconds": 407000000 },
+      "allDay": false
+    }
+  },
+  "14-11-24": { "1": { "allDay": false, "title": "Departure of Delegations" } }
+}
