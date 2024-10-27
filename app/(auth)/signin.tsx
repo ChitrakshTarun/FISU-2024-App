@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const IDPage = () => {
+const SignInPage = () => {
   return (
     <View>
-      <Text>IDPage</Text>
+      <Text>SignInPage</Text>
     </View>
   );
 };
 
-export default IDPage;
+export default SignInPage;
 
 const styles = StyleSheet.create({});

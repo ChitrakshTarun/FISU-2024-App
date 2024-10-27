@@ -1,16 +1,22 @@
 import { Stack } from "expo-router";
 
-export default function NotificationsLayout() {
+export default function RootLayout() {
   return (
     <Stack>
       <Stack.Screen
-        name="index"
+        name="(tabs)"
         options={{
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="[id]"
+        name="(hospitality)"
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="(information)"
         options={{
           headerShown: false,
         }}

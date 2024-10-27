@@ -3,45 +3,27 @@ import { Stack } from "expo-router";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 const queryClient = new QueryClient();
 
-export default function RootLayout() {
+export default function AppLayout() {
   return (
     <QueryClientProvider client={queryClient}>
       <GestureHandlerRootView>
         <Stack>
           <Stack.Screen
-            name="(tabs)"
+            name="index"
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name="food"
+            name="(auth)"
             options={{
               headerShown: false,
             }}
           />
           <Stack.Screen
-            name="tourism"
+            name="(root)"
             options={{
               headerShown: false,
-            }}
-          />
-          <Stack.Screen
-            name="health"
-            options={{
-              headerTitle: "Healthcare Information",
-            }}
-          />
-          <Stack.Screen
-            name="help"
-            options={{
-              headerTitle: "Contacts & Help",
-            }}
-          />
-          <Stack.Screen
-            name="hosts"
-            options={{
-              headerTitle: "Event Hosts",
             }}
           />
         </Stack>

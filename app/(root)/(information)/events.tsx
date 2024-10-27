@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const hosts = () => {
+const EventsPage = () => {
   return (
     <View>
-      <Text>hosts</Text>
+      <Text>EventsPage</Text>
     </View>
   );
 };
 
-export default hosts;
+export default EventsPage;
 
 const styles = StyleSheet.create({});

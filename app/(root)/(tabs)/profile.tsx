@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const help = () => {
+const ProfilePage = () => {
   return (
     <View>
-      <Text>help</Text>
+      <Text>ProfilePage</Text>
     </View>
   );
 };
 
-export default help;
+export default ProfilePage;
 
 const styles = StyleSheet.create({});

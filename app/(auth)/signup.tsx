@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const health = () => {
+const SignUpPage = () => {
   return (
     <View>
-      <Text>health</Text>
+      <Text>SignUpPage</Text>
     </View>
   );
 };
 
-export default health;
+export default SignUpPage;
 
 const styles = StyleSheet.create({});

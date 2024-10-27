@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const updates = () => {
+const UsernamePage = () => {
   return (
     <View>
-      <Text>updates</Text>
+      <Text>UsernamePage</Text>
     </View>
   )
 }
 
-export default updates
+export default UsernamePage
 
 const styles = StyleSheet.create({})

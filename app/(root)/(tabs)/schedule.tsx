@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const index = () => {
+const SchedulePage = () => {
   return (
     <View>
-      <Text>index</Text>
+      <Text>SchedulePage</Text>
     </View>
   );
 };
 
-export default index;
+export default SchedulePage;
 
 const styles = StyleSheet.create({});

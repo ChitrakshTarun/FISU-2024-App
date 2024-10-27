@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const TourismInfoPage = () => {
+const HostsPage = () => {
   return (
     <View>
-      <Text>TourismInfoPage</Text>
+      <Text>HostsPage</Text>
     </View>
   );
 };
 
-export default TourismInfoPage;
+export default HostsPage;
 
 const styles = StyleSheet.create({});

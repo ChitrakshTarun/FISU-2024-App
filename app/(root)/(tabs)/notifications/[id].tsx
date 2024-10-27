@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const venues = () => {
+const NotificationsExpandedPage = () => {
   return (
     <View>
-      <Text>venues</Text>
+      <Text>NotificationsExpandedPage</Text>
     </View>
   );
 };
 
-export default venues;
+export default NotificationsExpandedPage;
 
 const styles = StyleSheet.create({});

@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const FoodInfoPage = () => {
+const VenuesPage = () => {
   return (
     <View>
-      <Text>FoodInfoPage</Text>
+      <Text>VenuesPage</Text>
     </View>
   );
 };
 
-export default FoodInfoPage;
+export default VenuesPage;
 
 const styles = StyleSheet.create({});

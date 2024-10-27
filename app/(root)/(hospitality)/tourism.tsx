@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const shuttle = () => {
+const TourismPage = () => {
   return (
     <View>
-      <Text>shuttle</Text>
+      <Text>TourismPage</Text>
     </View>
   );
 };
 
-export default shuttle;
+export default TourismPage;
 
 const styles = StyleSheet.create({});

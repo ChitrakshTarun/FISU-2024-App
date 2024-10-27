@@ -2,7 +2,7 @@ import { Tabs } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function RootLayout() {
+export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
@@ -11,7 +11,7 @@ export default function RootLayout() {
       }}
     >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           headerTitle: "FISU 2024 - Home",
           tabBarLabel: "Home",
@@ -59,6 +59,21 @@ export default function RootLayout() {
           tabBarIcon: ({ focused, size }) => (
             <Ionicons
               name={focused ? "notifications" : "notifications-outline"}
+              size={size}
+              color={focused ? Colors.Black : Colors.Gray}
+            />
+          ),
+          tabBarLabelStyle: { fontWeight: "bold" },
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          headerTitle: "Participant Profile",
+          tabBarLabel: "Profile",
+          tabBarIcon: ({ focused, size }) => (
+            <Ionicons
+              name={focused ? "person" : "person-outline"}
               size={size}
               color={focused ? Colors.Black : Colors.Gray}
             />

@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const events = () => {
+const FoodPage = () => {
   return (
     <View>
-      <Text>events</Text>
+      <Text>FoodPage</Text>
     </View>
   );
 };
 
-export default events;
+export default FoodPage;
 
 const styles = StyleSheet.create({});
