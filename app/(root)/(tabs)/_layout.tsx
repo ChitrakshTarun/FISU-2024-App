@@ -41,7 +41,7 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="notifications"
+        name="updates"
         options={{
           headerTitle: "Event Updates",
           tabBarLabel: "Updates",
