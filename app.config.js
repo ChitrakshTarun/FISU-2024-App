@@ -6,7 +6,7 @@ export default {
     orientation: "portrait",
     icon: "./assets/images/icon.png",
     scheme: "myapp",
-    userInterfaceStyle: "automatic",
+    userInterfaceStyle: "light",
     splash: {
       image: "./assets/images/splash.png",
       resizeMode: "contain",
@@ -20,7 +20,7 @@ export default {
     ios: {
       supportsTablet: true,
       bundleIdentifier: "com.chitrakshtarun.fisu",
-      googleServicesFile: process.env.APPLE_SERVICES_PLIST,
+      googleServicesFile: process.env.EXPO_PUBLIC_APPLE_SERVICES_PLIST,
     },
     android: {
       adaptiveIcon: {
@@ -28,7 +28,7 @@ export default {
         backgroundColor: "#ffffff",
       },
       package: "com.chitrakshtarun.fisu",
-      googleServicesFile: process.env.GOOGLE_SERVICES_JSON,
+      googleServicesFile: process.env.EXPO_PUBLIC_GOOGLE_SERVICES_JSON,
     },
     web: {
       bundler: "metro",

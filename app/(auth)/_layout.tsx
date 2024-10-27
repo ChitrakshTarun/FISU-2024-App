@@ -1,6 +1,5 @@
 // DEPENDENCIES
 import { Stack } from "expo-router";
-import { Platform } from "react-native";
 
 const AuthLayout = () => {
   return (
@@ -8,22 +7,21 @@ const AuthLayout = () => {
       <Stack.Screen
         name="username"
         options={{
-          headerTitle: "FISU 2024",
-          animation: Platform.OS == "android" ? "fade_from_bottom" : "default",
+          headerTitle: "Welcome - FISU 2024",
         }}
       />
       <Stack.Screen
         name="signin"
         options={{
           headerTitle: "FISU 2024 - Sign In",
-          animation: Platform.OS == "android" ? "fade_from_bottom" : "default",
+          headerBackTitle: "Back",
         }}
       />
       <Stack.Screen
         name="signup"
         options={{
           headerTitle: "FISU 2024 - Sign Up",
-          animation: Platform.OS == "android" ? "fade_from_bottom" : "default",
+          headerBackTitle: "Back",
         }}
       />
       <Stack.Screen
@@ -31,7 +29,6 @@ const AuthLayout = () => {
         options={{
           headerTitle: "Forgot Password",
           headerBackTitle: "Back",
-          animation: Platform.OS == "android" ? "fade_from_bottom" : "default",
         }}
       />
     </Stack>

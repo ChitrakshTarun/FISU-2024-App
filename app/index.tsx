@@ -1,14 +1,28 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
+import { useRouter } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useAuth } from "@/providers/CustomAuthProvider";
+import { ActivityIndicator, View } from "react-native";
+import { Colors } from "@/constants/Colors";
 
-const IndexPage = () => {
-  return (
-    <View>
-      <Text>IndexPage</Text>
-    </View>
-  );
-};
+export default function Index() {
+  const { isLoading, isSignedIn } = useAuth();
+  const router = useRouter();
 
-export default IndexPage;
+  useEffect(() => {
+    SplashScreen.preventAutoHideAsync();
+    const handleNavigation = async () => {
+      if (isLoading) return;
+      if (isSignedIn) {
+        router.replace("/(root)/(tabs)/home");
+      } else {
+        router.replace("/(auth)/username");
+      }
+      await SplashScreen.hideAsync();
+    };
 
-const styles = StyleSheet.create({});
+    handleNavigation();
+  }, [isLoading, isSignedIn, router]);
+
+  return null;
+}
